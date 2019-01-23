@@ -6,9 +6,10 @@
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport" content="width = device-width , initial-scale=1"> 
   </head>
   <body>
-    
+    <i class="icon-menu burger-button " id="burger-menu"></i>
     <header class="header">
       <div class="container">
 
@@ -92,7 +93,7 @@
             </article>
       </div>
     </section>
-    <div class="container">
+     <div class="container">
       <h2 class="event-list-title">Más sobre mi experiencia</h2>
     </div>
     <section id="experiencia" class="event-list">
@@ -157,7 +158,7 @@
 
         <form action="" class="form-emal">
           <h3>creamos algo juntos? </h3>
-          <input type="text" placeholder="email@gmail.com">
+          <input type="text" placeholder="Dejame tu email">
           <button>  enviar  </button>
         </form>
         <div class="social">
@@ -174,8 +175,42 @@
         <p>Curso de Desarrollador Web Online 2019 <img src="./images/platzi.png" width="80px"alt="platzi"></p>
       </div>
       <div>
-        <p>Designed whit ♥ by <a href="#">Ricardo Di Benedetto</a></p>
+        <p>Designed whit ❤ by <a href="#">Ricardo Di Benedetto</a></p>
       </div>
     </footer>
+    <script>
+      const ipad = window.matchMedia("screen and (max-width:760px)");
+      
+      const menu = document.querySelector('.menu');
+      const burgerButton = document.querySelector('#burger-menu');
+      
+      ipad.addListener(validation);
+console.log(ipad);
+      function validation(event)
+      {
+        if (event.matches )
+        {
+          burgerButton.addEventListener("click" , hideShow);
+        }
+        else
+        {
+          burgerButton.removeEventListener("click",hideShow);
+        }
+      }
+      validation(ipad);
+
+
+      function hideShow()
+      {
+        if(menu.classList.contains("is-active"))
+        {
+          menu.classList.remove("is-active");
+        }
+        else
+        {
+          menu.classList.add('is-active');
+        }
+      }
+    </script>
   </body>
 </html>
